@@ -48,9 +48,9 @@ app.get("/api/persons/:id", (req, res) => {
 //remove a single person
 app.delete("/api/persons/:id", (req, res) => {
   const id = Number(req.params.id);
-  const filteredPersons = persons.filter((person) => person.id !== id);
+  persons = persons.filter((person) => person.id !== id);
   console.log(`person at ${id} id has been deleted`);
-  res.json(filteredPersons);
+  res.json(persons);
 });
 
 app.post("/api/persons", (req, resp) => {
